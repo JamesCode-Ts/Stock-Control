@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +15,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   loginCard = true
+  private destroy$ = new Subject<void>();
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,7 +42,9 @@ export class HomeComponent {
 
   onSubmitLoginForm(): void {
     if (this.loginForm.value && this.loginForm.valid) {
-      this.userService.authUser(this.loginForm.value as AuthRequest).subscribe({
+      this.userService.authUser(this.loginForm.value as AuthRequest)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
         next: (response) => {
           if (response) {
             this.cookieService.set('USER_INFO', response?.token);
@@ -71,6 +76,7 @@ export class HomeComponent {
     if (this.signupForm.value && this.signupForm.valid) {
       this.userService
         .signupUser(this.signupForm.value as SignupUserRequest)
+        .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (response) => {
             if (response) {
@@ -95,5 +101,10 @@ export class HomeComponent {
           },
         });
     }
+  }
+  
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
