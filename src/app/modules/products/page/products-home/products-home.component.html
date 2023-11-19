@@ -1,3 +1,12 @@
 <app-toolbar-navigation></app-toolbar-navigation>
 
-<app-products-table [products]="productsDatas"></app-products-table>
+<!--  Este é o component pai, ele recebe os dados compartilhados pelo 
+componente filho pelo o @input. E vai mostar a tabela que esta no compoente filho.-->
+<app-products-table
+  [products]="productsDatas"
+  (deleteProductEvent)="handleDeleteProductAction($event)"
+  (productEvent)="handleProductAction($event)"
+></app-products-table>
+<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+
+<!--Quando for @output como nesse caso o evento sera disparado no componente filho.  -->

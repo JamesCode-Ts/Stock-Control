@@ -1,4 +1,4 @@
-
+<!-- Este é o component filho, ele vai ser renderizado e mostrado no componente pai-->
 <div class="grid">
   <div class="col-12">
     <p-card
@@ -129,6 +129,7 @@
                   label="Adicionar"
                   pTooltip="Adicionar produto"
                   tooltipPosition="top"
+                  (onClick)="handleProductEvent(addProductEvent)"
                 ></p-button>
               </div>
             </th>
@@ -155,6 +156,7 @@
                   class="p-button-rounded p-button-warning"
                   pTooltip="Editar produto"
                   tooltipPosition="top"
+                  (click)="handleProductEvent(editProductEvent, product?.id)"
                 ></button>
                 <button
                   pButton
@@ -163,6 +165,7 @@
                   class="p-button-rounded p-button-danger"
                   pTooltip="Remover Produto"
                   tooltipPosition="top"
+                  (click)="handleDeleteProduct(product?.id, product?.name)"
                 ></button>
               </div>
             </td>

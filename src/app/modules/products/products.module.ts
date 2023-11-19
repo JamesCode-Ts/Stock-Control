@@ -22,9 +22,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsHomeComponent } from './page/products-home/products-home.component';
 import { PRODUCTS_ROUTES } from './products.routing';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 @NgModule({
-  declarations: [ProductsHomeComponent, ProductsTableComponent],
+  declarations: [ProductsHomeComponent, ProductsTableComponent, ProductFormComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -32,19 +33,19 @@ import { ProductsTableComponent } from './components/products-table/products-tab
     RouterModule.forChild(PRODUCTS_ROUTES),
     SharedModule,
     HttpClientModule,
-    // PrimeNg
-    CardModule,
-    ButtonModule,
-    TableModule,
-    InputMaskModule,
-    InputSwitchModule,
-    InputTextModule,
-    InputTextareaModule,
-    InputNumberModule,
-    DynamicDialogModule,
-    DropdownModule,
-    ConfirmDialogModule,
-    TooltipModule,
+     // PrimeNg
+     CardModule,
+     ButtonModule,
+     TableModule,
+     InputMaskModule,
+     InputSwitchModule,
+     InputTextModule,
+     InputTextareaModule,
+     InputNumberModule,
+     DynamicDialogModule,
+     DropdownModule,
+     ConfirmDialogModule,
+     TooltipModule,
   ],
   providers: [DialogService, ConfirmationService],
 })
