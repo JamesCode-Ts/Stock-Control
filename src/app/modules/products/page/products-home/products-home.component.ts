@@ -136,7 +136,12 @@ export class ProductsHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next();
+    this.destroy$.next(); 
     this.destroy$.complete();
   }
+
+  /** 
+   * quando this.destroy$.next() é chamado (geralmente durante a destruição do componente), 
+   * isso vai notificar o takeUntil para finalizar 
+   * a subscription que está recebendo os dados de getAllProducts(). */
 }
