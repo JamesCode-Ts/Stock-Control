@@ -33,6 +33,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     RouterModule.forChild(PRODUCTS_ROUTES),
     SharedModule,
     HttpClientModule,
+
      // PrimeNg
      CardModule,
      ButtonModule,
