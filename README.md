@@ -7,9 +7,9 @@ Projeto front-end destinado há um controle de estoque. Tem como objetivo princi
 
 Tecnologias utilizadas
 
-Angular 15
-PrimeNg
-TypeScript
-Chart.js
+#Angular 15
+#PrimeNg
+#TypeScript
+#Chart.js
 
 
