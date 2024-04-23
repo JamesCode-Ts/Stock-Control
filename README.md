@@ -20,14 +20,57 @@ Formulário de Cadastro de Produtos
 ![Screenshot_5](https://github.com/JamesCode-Ts/Stock-Control/assets/63932833/eedaff00-e81a-4104-91c7-54affc170469)
 
 
-Tecnologias utilizadas:
 
-Angular 15
 
-PrimeNg
+### Para usar este projeto, siga estas etapas:
 
-TypeScript
+1. Clone este repositório para o seu computador:
 
-Chart.js
+```bash
+git clone https://github.com/JamesCode-Ts/Stock-Control
+```
+
+2. Baixa o script de instalação do Node.js
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+```
+
+3. Instala o Node.js (Node Package Manager)
+```bash
+sudo apt install nodejs
+```
+
+4. Instala o NPM
+```bash
+sudo apt install npm
+```
+
+5. Instala todas as dependências listadas no arquivo `package.json`. 
+```bash
+npm install
+```
+6. Este comando utiliza o NPM para instalar globalmente (`-g`) o Angular CLI.
+```bash
+sudo npm -g i @angular/cli
+```
+8. Este comando é usado para iniciar a aplicação. 
+
+```bash
+npm start
+```
+
+
+## Tecnologias utilizadas:
+
+* #### Angular 15
+
+* #### PrimeNg
+
+* #### TypeScript
+
+* #### Chart.js
+
+
 
 
