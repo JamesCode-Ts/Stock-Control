@@ -60,6 +60,8 @@ sudo npm -g i @angular/cli
 npm start
 ```
 
+9. Navegue até ```http://localhost:4200/ ``` para visualizar a aplicação.
+
 
 ## Tecnologias utilizadas:
 
